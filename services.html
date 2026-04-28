@@ -1,0 +1,1006 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/2f00a9640e.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Debt Force</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Add any custom styles for the services page here */
+      .hero {
+        background: #ffffff;
+        padding: 110px 6%;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .hero-content {
+        max-width: 1180px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.15fr 0.95fr;
+        gap: 3.5rem;
+        align-items: center;
+      }
+
+      .hero-copy::before {
+        content: "";
+        display: block;
+        width: 64px;
+        height: 3px;
+        background: #111827;
+        margin-bottom: 1.6rem;
+      }
+
+      .hero-copy h2 {
+        font-size: clamp(2.8rem, 4vw, 3.8rem);
+        line-height: 1.02;
+        margin-bottom: 1rem;
+        letter-spacing: -0.04em;
+        color: #111827;
+        text-transform: uppercase;
+      }
+
+      .hero-copy p {
+        color: #334155;
+        font-size: 1.05rem;
+        line-height: 1.85;
+        max-width: 42rem;
+      }
+
+      .hero-visual img {
+        width: 100%;
+        display: block;
+        border-radius: 28px;
+        object-fit: cover;
+        box-shadow: 0 30px 60px rgba(15, 23, 42, 0.12);
+      }
+
+      @media (max-width: 980px) {
+        .hero {
+          padding: 60px 4.5% 48px;
+        }
+        .hero-content {
+          grid-template-columns: minmax(240px, 1.1fr) minmax(220px, 0.9fr);
+          gap: 2rem;
+          text-align: left;
+        }
+        .hero-copy::before {
+          margin: 0 0 1.6rem;
+        }
+        .hero-visual img {
+          max-width: 100%;
+          margin: 0;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .hero {
+          padding: 48px 3.5% 32px;
+        }
+        .hero-content {
+          grid-template-columns: minmax(180px, 1fr) minmax(180px, 1fr);
+          gap: 1.4rem;
+        }
+        .hero-copy h2 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .hero {
+          padding: 38px 3% 26px;
+        }
+        .hero-content {
+          grid-template-columns: minmax(160px, 1fr) minmax(160px, 1fr);
+          gap: 1rem;
+        }
+        .hero-copy h2 {
+          font-size: 1.75rem;
+        }
+        .hero-copy p {
+          font-size: 0.98rem;
+          line-height: 1.7;
+        }
+      }
+
+      .services-section {
+        padding: 60px 6%;
+        background: #f8fafc00;
+      }
+
+      .services-section__inner {
+        max-width: 1180px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      .service-row {
+        display: grid;
+        grid-template-columns: minmax(260px, 1.2fr) minmax(220px, 0.8fr);
+        gap: 28px;
+        align-items: center;
+        padding: 28px;
+        border-radius: 32px;
+        background: #fee2e2;
+        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+      }
+
+      .service-row:nth-child(even) {
+        grid-template-columns: minmax(220px, 0.8fr) minmax(260px, 1.2fr);
+      }
+
+      .service-row:nth-child(even) .service-media {
+        order: 2;
+      }
+
+      .service-media img {
+        width: 600px;
+        display: block;
+        border-radius: 24px;
+        object-fit: cover;
+        box-shadow: 0 24px 48px rgba(15, 23, 42, 0.12);
+      }
+
+      .service-copy {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 160px;
+      }
+
+      .service-label {
+        display: inline-flex;
+        padding: 18px 20px;
+        border: 2px solid #991b1b;
+        border-radius: 18px;
+        background: #ffffff00;
+        color: #111827;
+        font-size: 1rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        text-align: center;
+        max-width: 18rem;
+      }
+
+      @media (max-width: 960px) {
+        .services-section {
+          padding: 48px 5%;
+        }
+        .service-row,
+        .service-row:nth-child(even) {
+          grid-template-columns: 1fr;
+          max-width: 760px;
+          margin: 0 auto;
+        }
+        .service-row {
+          text-align: center;
+        }
+        .service-row:nth-child(even) .service-media {
+          order: 0;
+        }
+
+        .service-media img {
+          width: 80%;
+          max-width: 100%;
+          margin: 0 auto;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .services-section {
+          padding: 42px 4%;
+        }
+        .service-row {
+          padding: 18px;
+          gap: 16px;
+          max-width: 640px;
+          margin: 0 auto;
+        }
+        .service-copy {
+          min-height: 130px;
+        }
+        .service-label {
+          font-size: 0.98rem;
+          padding: 16px 18px;
+          max-width: 14rem;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .services-section {
+          padding: 32px 3.5%;
+        }
+        .service-row {
+          padding: 16px;
+          gap: 14px;
+          max-width: 540px;
+          margin: 0 auto;
+        }
+        .service-copy {
+          min-height: 110px;
+        }
+        .service-label {
+          font-size: 0.92rem;
+          padding: 12px 14px;
+          max-width: 12rem;
+        }
+      }
+
+      .btn-container {
+        display: flex;
+        justify-content: left;
+        align-items: left;
+        margin-top: 100px;
+      }
+
+      .btn-bar {
+        width: 60%;
+        max-width: 900px;
+        padding: 14px 20px;
+        border-radius: 30px;
+        border: 1px solid #dcdcdc00;
+        background: linear-gradient(100deg, #ef4444, #f97316);
+        color: #ececec;
+        font-size: 16px;
+
+        cursor: pointer;
+        box-shadow: 0 1px 6px rgba(32, 33, 36, 0.4);
+        transition: all 0.2s ease;
+      }
+      .btn-bar:hover {
+        box-shadow: 0 4px 12px rgba(32, 33, 36, 0.4);
+      }
+
+      #articleBox {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        width: 90%;
+        max-width: 900px;
+        color: #111827;
+        margin: 20px auto;
+        padding: 0 50px;
+      }
+
+      #articleBox.open {
+        max-height: 100%;
+      }
+
+      @media (max-width: 520px) {
+        #articleBox {
+          width: 80%;
+          max-width: 500px;
+          font-size: 10px;
+        }
+      }
+
+      .fa-angle-down {
+        text-align: right;
+        transition: transform 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="brand"><span>DF</span> Debt Force</div>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <nav class="menu" id="navMenu" aria-hidden="true">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="menu-overlay" id="menuOverlay" hidden></div>
+    </header>
+
+    <div class="btn-container">
+      <button id="dropBtn" class="btn-bar">
+        <h3>
+          Company Profile of Debt Force Limited
+          <i class="fa-solid fa-angle-down"></i>
+        </h3>
+      </button>
+    </div>
+    <br />
+
+    <div id="articleBox">
+      <article>
+        <br />
+
+        <h2>The Company</h2>
+        <br />
+        <p>
+          Debt Force is leader of the consortium of Asset Management Partners
+          consisting of Debt Force, Leadville Solicitors, Godwin Kalu &amp; Co.
+          (an Estate Surveyor) and Gideon Nkwachi &amp; Co (a firm of Chartered
+          Accountants). The object of the consortium which currently partners
+          with the Asset Management Corporation of Nigeria (AMCON) is to help
+          resolve the Non Performing Loans in the banking system by deploying a
+          collegiate approach that will prove to be effective and efficient.
+        </p>
+        <br />
+        <p>
+          Our value proposition is in the extensive Risk Management and overall
+          Banking experience of our key promoters (cumulative forty five years)
+          and the effectiveness and efficiency this delivers in executing our
+          assignments. We also have the leverage of drawing on an extensive pool
+          of highly motivated and committed cross disciplinary resources from
+          within and outside the organization to carry out our assignments with
+          clear objective of achieving results. We have considerable
+          relationships with law enforcement agents, a wide pool of committed
+          attorneys and pride ourselves with the deep seated know how from the
+          vast Banking, Legal and accounting background of our promoters.
+        </p>
+        <br />
+
+        <h2>What We Do</h2>
+        <br />
+        <ul>
+          <li>Debt Recovery Services</li>
+          <li>Debt Resolution Advisory</li>
+          <li>Forensic Audit &amp; Asset Tracing</li>
+          <li>Enterprise Risk Management Advisory</li>
+          <li>Credit Risk Control (Pre and Post Disbursement)</li>
+          <li>Receivership</li>
+          <li>Training</li>
+        </ul>
+        <br />
+
+        <h2>Debt Recovery Service</h2>
+        <br />
+        <p>
+          We have in the short period of our existence won big ticket recovery
+          briefs from six Nigerian banks with a combined portfolio size of about
+          N12 billion. We are happy to convey that our success rate for
+          recoveries within this portfolio spectrum has been impressive and has
+          probably outperformed the industry benchmark. Our success in this
+          business segment is attributable to deployment of outside-the-box
+          tools rarely found among professionals in the field who may not
+          possess the cross disciplinary financial and negotiation skills
+          required to elicit wholehearted co-operation from chronic debtors. We
+          are primarily solution focused in our recovery initiatives which leads
+          us into offering quality advisory that often carves a way out for
+          debtors entangled in illiquidity traps. Our deployment of the
+          instrumentality of coercion only occurs in instances where the debtor
+          has proven recalcitrant even when there is established capacity to
+          pay. In these instances, we have been very effective in using our
+          cross functional resources to partner with the state apparatus in an
+          effective manner as would lead to timely recovery of the delinquent
+          portfolio.
+        </p>
+        <br />
+
+        <h2>Clients</h2>
+        <br />
+        <p>
+          Notable clients that we have and continue to work for among numerous
+          others are:
+        </p>
+        <br />
+        <ol type="A">
+          <li>Asset Management Corporation of Nigeria (AMCON)</li>
+          <li>Enterprise Bank plc</li>
+          <li>Zenith Bank plc</li>
+          <li>Keystone Bank plc</li>
+          <li>Nigerian Deposit Insurance Corporation</li>
+          <li>Unity Bank/Frontier Capital Alternative Assets</li>
+        </ol>
+        <br />
+
+        <h2>Verifiable Accomplishments in Debt Recovery</h2>
+        <br />
+        <h3>A.</h3>
+        <br />
+        <p>Client: Asset Management Corporation of Nigeria (AMCON)</p>
+        <p>Performance: Excellent</p>
+        <p>Size of Debt: between N30 million to N3 billion</p>
+        <p>Holders of Debt: Retail, Commercial &amp; Corporate Debtors</p>
+        <br />
+
+        <h3>Retail Debtors</h3>
+        <br />
+        <p>
+          This represents the most difficult cadre of debtors in our experience.
+          Often, this category are out of business, having no cash flows, have
+          depleted personal assets, are in declining businesses or are in new
+          and struggling businesses after being shut out of the Banking System
+          because of the debt debacle of their previous businesses. Retail
+          debtors may also represent individuals who once had good jobs and were
+          upwardly mobile but are now jobless and almost hopeless.
+        </p>
+
+        <h4>Our successes at AMCON on Retail Debtors</h4>
+        <br />
+        <ol>
+          <li>
+            Recovered chronic retail debts of many debtors already classified as
+            lost in the books of the Corporation and/or the legacy banks which
+            sold the debts to AMCON.
+          </li>
+          <li>
+            Used out of the box tools to first locate these debtors who had gone
+            underground and then enter into negotiated settlement arrangements
+            with them.
+          </li>
+          <li>
+            Followed through with the negotiated settlements to ensure that
+            occasional defaults by the debtors do not occur and if they do, took
+            corrective measures to redeem them in favor of payment.
+          </li>
+          <li>
+            Size of the combined recoveries between 2010 and today estimated at
+            N1.5 billion.
+          </li>
+        </ol>
+        <br />
+
+        <h3>Commercial Debtors</h3>
+        <br />
+        <p>
+          Commercial debtors were a notch easier to deal with than retail
+          debtors. However, the overflow in economic misfortunes of retail
+          debtors caused by the economic meltdown from 2008 to 2010 had a ripple
+          effect on commercial debtors and progressively weakened their
+          fortunes. Commercial debtors may have collaterals securing the bad
+          debt or not, may have associated businesses that still produce cash
+          flow, may experience a resurgence or decline in existing business or
+          may be out of business and hopeless.
+        </p>
+        <br />
+
+        <h4>Our successes at AMCON on Commercial Debtors</h4>
+        <br />
+        <ol>
+          <li>
+            We have and continue to be a foremost recovery agent achieving
+            successes in recovery of core commercial debts in the books of AMCON
+            and the legacy banks.
+          </li>
+          <li>
+            Used out of the box negotiation, coercion and litigation resources
+            to achieve recovery of these core debts.
+          </li>
+          <li>Size of combined recoveries estimated at N7 billion.</li>
+        </ol>
+        <br />
+
+        <h3>Corporate Debtors</h3>
+        <br />
+        <p>
+          Corporate debtors are easiest to deal with because of their size and
+          longevity. The origin of their debt may arise from any of: disputation
+          of debt, ability to pay but lack of willingness, preference to fund
+          their business using spontaneous funds from creditors, or unnecessary
+          bureaucracy.
+        </p>
+        <br />
+
+        <h4>Our successes at AMCON on Corporate Debts</h4>
+        <br />
+        <ol>
+          <li>
+            We have and continue to play at resolving these types of debt from a
+            strict coercive, litigation and negotiation sense. However, we also
+            resolve some of these debts from a restructuring and refinancing
+            angle. Our client AMCON is very pleased with our endeavor.
+          </li>
+          <li>
+            Size of these combined recoveries estimated at more than N35
+            billion.
+          </li>
+        </ol>
+        <br />
+
+        <p>
+          We therefore request to be assigned accounts from your organization’s
+          Non Performing Loan portfolio requiring effective recovery from
+          defaulters. We assure you that we would deploy a wide array of options
+          in the accomplishment of substantial success once the mandate is given
+          to our firm.
+        </p>
+        <br />
+
+        <h3>B.</h3>
+        <br />
+        <p>Client: Enterprise Bank</p>
+        <p>Performance: Excellent</p>
+        <p>Size of Debt: Combined Value – N6 billion</p>
+        <p>Holder of Debt: Commercial Debtors</p>
+        <br />
+
+        <h4>Our successes at Enterprise Bank with Commercial Debtors</h4>
+        <br />
+        <ol>
+          <li>
+            We applied creative methods to smoke out most of the debtors who had
+            gone underground and could not be located by previous recovery
+            agents of the bank.
+          </li>
+          <li>
+            Leveraging on the criminal justice system, we used the apparatus of
+            state to make a matter against debtors which provided cloned
+            documents to obtain loans or divert proceeds of the facilities.
+          </li>
+          <li>Size of combined recoveries achieved estimated at N3 billion.</li>
+        </ol>
+        <br />
+
+        <h3>C.</h3>
+        <br />
+        <h4>Our successes at Zenith Bank with Commercial Debtors</h4>
+        <br />
+        <p>Client: Zenith Bank plc</p>
+        <p>Performance: Outstanding</p>
+        <p>Size of Debt: Combined Value – N2 billion</p>
+        <p>Holders of Debt: Commercial Debtors</p>
+        <ol>
+          <li>
+            We are the leading recovery agent to Zenith Bank and our performance
+            has been the best year on year for the past 3 years running.
+          </li>
+          <li>
+            Virtually all the debts are hard core and long written off. The
+            recoveries we achieved have been a key source of write-back to the
+            profit and loss performance of the remedial asset division of the
+            bank.
+          </li>
+          <li>
+            Size of combined recoveries achieved estimated at N1.8 billion.
+          </li>
+        </ol>
+        <br />
+
+        <h3>D.</h3>
+        <br />
+        <h4>Our successes at Unity Bank/Frontier Capital Alternative Assets</h4>
+        <br />
+        <p>Client: Unity Bank/Frontier Capital Alternative Assets</p>
+        <p>Performance: Exceptional</p>
+        <p>Size of Debt: Combined Value – N36 billion</p>
+        <p>Holders of Debt: Commercial &amp; Corporate Debtors</p>
+        <br />
+        <ol>
+          <li>
+            We were most recently given this mandate and pride ourselves as
+            having performed exceptionally well to date. Within the first six
+            months of assuming the mandate, we have recorded actual recoveries
+            in excess of N3 billion and have existing repayment proposals from
+            debtors of another N4 billion or so.
+          </li>
+        </ol>
+        <br />
+
+        <h2>Other Services We Provide</h2>
+        <br />
+        <h3>Enterprise Risk Management Advisory</h3>
+        <br />
+        <p>
+          The ERM Advisory arm of our business was engaged in 2015 by LAPO
+          Microfinance Bank to articulate, create and implement a bank wide
+          Enterprise Risk Management framework and acculturation project. That
+          project commenced with our diagnosis of the traditional risk
+          management practices as currently obtained in the bank, benchmarked
+          against global best practice standards required of an Enterprise Risk
+          Management practice. Having identified gaps of divergence between
+          practice in the bank and requisite ERM standards, we designed a
+          best-fit ERM framework suited to the envisioned going concern goals
+          and long term business strategies of the MFB. Our work included ERM
+          policy, systems, procedures, lines of authority, lines of defense,
+          responsibilities, escalation mechanisms, disaster recovery mechanisms
+          and other proactive measures. We rounded up our project in 2016 with
+          recruitments into risk governance structures and charter creation for
+          Executive Management and Board risk committees. We continue to
+          intervene as called upon to smooth rough edges in the evolving ERM
+          practice of the MFB.
+        </p>
+        <br />
+
+        <h3>Debt Resolution Advisory</h3>
+        <br />
+        <p>
+          The Debt Advisory arm of our business has seen substantial activity
+          since inception of the company. We have advised highly indebted
+          companies with debt profiles combined at more than N200 billion
+          through negotiated settlements and schemes of arrangements resulting
+          in the creditor banks and AMCON according substantial forbearance and
+          concessions in addition to restructuring debt profiles over extended
+          periods. Our effort in this respect has brought many companies back
+          from the brink of extinction, resolved previously irreconcilable
+          differences with Bankers and facilitated reclassification of debts
+          from non-performing to performing.
+        </p>
+        <br />
+
+        <h3>Forensic Audits</h3>
+        <br />
+        <p>
+          We have developed in-house software to do forensic audit of bank
+          statements of corporations and individuals to uncover excess and
+          spurious charges by banks, including interest charges, COT charges or
+          excess charges borne out of operational lapses, rent seeking or
+          deliberate manipulation of the banking application. Our software has
+          given a lie to the opinion that bank application software is error
+          free. We leverage resident expertise not only to do forensic and
+          investigative accounting on the bank statements of our clients, but
+          also to create negotiation tools that leverage the outcome of our
+          forensic exercise and obtain forbearance and debt extension
+          arrangements in the best interest of our clients.
+        </p>
+        <br />
+
+        <h2>Our Team</h2>
+        <br />
+        <h3>Solomon Omorogieva</h3>
+        <br />
+        <p>
+          Work Experience: Over 20 years top notch experience in the Banking
+          industry across the following institutions: Pinnacle Commercial Bank,
+          Crystal Bank, Standard Trust Bank, UBA, Oceanic Bank, Bank PHB.
+        </p>
+        <br />
+        <ul>
+          <li>
+            Key Responsibilities: Chief Risk Officer, Director Asset Remedial
+            Management, Credit Origination &amp; Business Development, Internal
+            Control, Legal.
+          </li>
+          <br />
+          <li>Professional Learning: Lawyer, Risk Manager, MBA.</li>
+          <br />
+          <li>
+            Key Strength: Exceptional Credit Structuring &amp; Remedial
+            Management Skills.
+          </li>
+        </ul>
+        <br />
+        <p>
+          He has multi functional hands on exposure in key risk management
+          functions like Credit Risk, Credit Analysis, Legal, Internal Control,
+          and Asset Remedial Management across various institutions. He has
+          served as Chief Risk Officer in two institutions and has been exposed
+          to the reasons why Risk Management fails and why it succeeds. An
+          ethical and professional banker, he has played significant roles in
+          setting up Risk Management functions, processes and policies in Banks
+          like UBA, Oceanic Bank and Bank PHB.
+        </p>
+        <br />
+        <p>
+          Solomon comes with an unusual balance and strength of a Risk Manager
+          with face-on exposure to market facing responsibilities executed at
+          some points as Head Multilateral Institutions, Branch Business
+          Manager, Head Public Sector, Regional Director Mid-West and
+          subsequently Lagos and West in Standard Trust Bank and United Bank for
+          Africa Plc. Before he left Bank PHB Plc, he was Divisional Executive,
+          Asset Remedial Management Division with responsibility of conceiving
+          and executing a remedial strategy for a Non Performing Loan portfolio
+          of over N300 billion.
+        </p>
+        <br />
+        <p>
+          Solomon obtained an LL.B and BL from the University of Benin and
+          Nigerian Law School in 1990 respectively and later obtained an MBA
+          from the same University in 1995. His key area of interest is to
+          champion the enthronement of world class Enterprise Wide Risk
+          Management structures, processes and culture in our local
+          institutions.
+        </p>
+        <br />
+
+        <h3>Steve Onyendinazu</h3>
+        <br />
+        <p>
+          Work Experience: Thirty one years of cognate working experience,
+          including over 17 years in the Financial Services industry at Nigerian
+          French Insurance (now AIICO), First Bank Plc, FSB International Bank,
+          Commercial Bank Credit Lyonnais, Access Bank and Bank PHB.
+        </p>
+        <br />
+        <ul>
+          <li>
+            Key Responsibilities: Financial/Quantitative Analysis, Corporate
+            Banking, Risk Asset Quality Management, Structured Credits, Business
+            Advisory &amp; Loan Workout.
+          </li>
+          <br />
+          <li>
+            Professional Learning: Risk Management, Corporate Banking, Actuarial
+            Science, Law.
+          </li>
+          <br />
+          <li>
+            Key Strength: Exceptional Financial Analysis &amp; Loan Workout
+            Skills.
+          </li>
+          <br />
+        </ul>
+        <p>
+          He started his career in the Financial Services Industry in 1994 as a
+          freshman Actuary in the Group Life & Pension Department of defunct
+          Nigerian French Insurance Ltd – Now merged into AIICO Ltd, where he
+          rose to become Head of Unit before his exit in 1995. He joined the
+          services of First Bank Plc later that year and up to 1997 was engaged
+          in various aspects of the Branch Commercial Banking Operations before
+          his exit to the Corporate Banking Group of legacy FSB International
+          Bank Plc in third quarter of 1997. He rose through the corporate
+          ladder to Head the Conglomerates & General Trading Unit in the
+          Corporate Banking Group of the Bank before his switch to Platinum Bank
+          in 2003 where he was the Deputy Head Corporate Banking Group.
+        </p>
+        <br />
+        <p>
+          He left Platinum Bank in 2004 to legacy Capital Bank Ltd (former CBCL)
+          where he initially headed the Services & Transportation Group
+          overseeing client segments such as aviation (Air France etc), maritime
+          & allied operations (AP Moller Group etc) and service companies in oil
+          & Gas, dredging, and other operators. Later he was redeployed to head
+          the Construction & Telecoms Group of the Bank where he oversaw
+          relationships including major GSM network operators and fixed wireless
+          operators e.g. MTN & Starcomms, multinational construction companies,
+          quarrying companies before the merger of the Bank with Access Bank in
+          2005. He joined Bank PHB in 2006 as Group Head Services &
+          Transportation, in the Corporate Banking Division of the Bank where he
+          created an enviable portfolio of maritime, aviation and industrial
+          client base before opting to man the newly formed Loan Workout Group
+          in the fledging Asset Remedial Management Division of the Bank.
+        </p>
+        <br />
+        <p>
+          During his tenure as bank-wide Head of Loan workout Group, he had
+          responsibility to turnaround a troubled loan portfolio in excess of
+          N200billion to performing assets within a very short time frame. This
+          assignment engaged his attention through the tenure of the legacy
+          management and that of the CBN appointed board prior to opting to
+          disengage from the Bank in February 2010 to pursue private practice in
+          Consulting and Debt Management. He obtained B.Sc Actuarial Science
+          from the University of Lagos in 1992 and M.Sc Marketing from the same
+          university in 1996. Mr. Onyendinazu has attended many courses at home
+          and abroad, is a member of many professional bodies in Investment
+          Banking and Risk Management (especially the Global Association of Risk
+          Professionals- GARP) and takes special interest in developmental and
+          trade finance as vehicles for rapid expansion of the domestic economy.
+        </p>
+        <br />
+
+        <h2>Other Faculty</h2>
+        <br />
+        <h3>Olajide Obarotimi</h3>
+        <br />
+        <p>
+          Olajide is a qualified international Accountant with extensive
+          knowledge of Financial Forensics, Financial Instruments, Financial
+          Reporting Standards and Regulatory Requirements. He is a core
+          financial reporting consultant certified to prepare IFRS, US GAAP and
+          UK GAAP reports. He has over a decade of experience in Investment
+          Banking at Royal Bank of Canada, JP Morgan and Bank of New York
+          Mellon.
+        </p>
+        <br />
+        <p>
+          As a consultant trainer, Olajide has written and presented papers and
+          led trainings across four continents on Sustainable Development,
+          Financial Forensics, Innovation, International Development, Fraud
+          Prevention, Islamic Finance, Leadership, Social Finance, Audit, IPSAS,
+          IFRS, Emerging Markets and more.
+        </p>
+        <br />
+        <h3>Certifications</h3>
+        <br />
+        <ul>
+          <li>Associations of Certified Chartered Accountants UK.</li>
+          <br />
+          <li>Associate Chartered Accountant Nigeria.</li>
+          <br />
+          <li>Certified Fraud Examiners (USA).</li>
+          <br />
+          <li>Certified in Investment Fund Services – Ireland.</li>
+          <br />
+          <li>Certified in IFRS (ACCA CertIFR).</li>
+          <br />
+          <li>
+            Certified in Innovation Management – Carnegie Mellon University USA.
+          </li>
+          <br />
+          <li>Certified Project Manager (PMI Ireland).</li>
+          <br />
+          <li>MBA – University of Wales, UK.</li>
+          <br />
+        </ul>
+
+        <h3>Solomon Akiotu</h3>
+        <br />
+        <p>
+          Solomon holds the Associate Membership of the Institute of Chartered
+          Accountants of Nigeria (ACA), the Chartered Institute of Stock Brokers
+          of Nigeria (ACS), and Senior Associate of the Risk Managers
+          Association of Nigeria. He obtained a B.Sc. (Accounting) degree in
+          1986 from the University of Benin and an M.Sc. (Finance) from the
+          University of London in 2014.
+        </p>
+        <br />
+        <p>
+          He started his career with Megabond Limited in 1988, gained experience
+          in accounting and administration, and later worked in Savings &amp;
+          Loans and investment services. He has experience in Financial Control,
+          Auditing, Internal Control, Asset Remedial Management, and Credit
+          Origination &amp; Business Development.
+        </p>
+        <br />
+
+        <h2>Contact Details</h2>
+
+        <br />
+        <p>Steve Onyendinazu – Chief Operating Officer: 08033349432</p>
+      </article>
+    </div>
+
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <div class="hero-copy">
+          <h2>OUR SERVICES</h2>
+          <p>
+            Debt Force provides structured debt recovery, advisory, and risk
+            management solutions tailored to financial institutions and
+            corporate clients. Our services are delivered with professionalism,
+            discipline, and measurable results.
+          </p>
+        </div>
+        <div class="hero-visual">
+          <img
+            src="assets/e89d4c9d-410d-8024-8007-913d5a8f129e.png"
+            alt="Business professional using tablet"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section">
+      <div class="services-section__inner">
+        <article class="service-row">
+          <div class="service-media">
+            <img
+              src="assets\71bc4f81-468d-8163-8007-88102b2351c0.png"
+              alt="Debt recovery services"
+            />
+          </div>
+          <div class="service-copy">
+            <div class="service-label">DEBT RECOVERY SERVICES</div>
+          </div>
+        </article>
+
+        <article class="service-row">
+          <div class="service-media">
+            <img
+              src="assets\72ad1239-4f5c-8115-8007-ab1a5a06e4b1.png"
+              alt="Debt resolution advisory"
+            />
+          </div>
+          <div class="service-copy">
+            <div class="service-label">DEBT RESOLUTION ADVISORY</div>
+          </div>
+        </article>
+
+        <article class="service-row">
+          <div class="service-media">
+            <img
+              src="assets\32bc4cfe-7564-8051-8007-ab1af9675700.png"
+              alt="Forensic audit and asset tracing"
+            />
+          </div>
+          <div class="service-copy">
+            <div class="service-label">FORENSIC AUDIT &amp; ASSET TRACING</div>
+          </div>
+        </article>
+
+        <article class="service-row">
+          <div class="service-media">
+            <img
+              src="assets\ff0898e1-835b-80ff-8007-ac55205b5b0f.png"
+              alt="Enterprise risk management advisory"
+            />
+          </div>
+          <div class="service-copy">
+            <div class="service-label">ENTERPRISE RISK MANAGEMENT ADVISORY</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="col">
+          <div class="brand-footer">
+            <img
+              src="assets\logos\5b54d9b8-49bd-8008-8007-7373beaa998b.jpg"
+              alt="Debt Force logo"
+              class="dbt-logo"
+            />
+            <div class="title">DEBT FORCE</div>
+          </div>
+        </div>
+
+        <div class="col">
+          <h4>OUR OFFICE</h4>
+          <p style="font-weight: 700">
+            REGENCY BUILDING<br />Suite 202, Plot 17 Ahmed Onibudo Street,<br />Victoria
+            Island, Lagos.
+          </p>
+          <p>
+            <a href="mailto:debtforceng@outlook.com" style="color: #b91c1c"
+              >debtforceng@outlook.com</a
+            >
+          </p>
+          <p>08033349432</p>
+        </div>
+
+        <div class="col">
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      (function () {
+        const nav = document.querySelector(".navbar");
+        function updateBodyPadding() {
+          if (nav) document.body.style.paddingTop = nav.offsetHeight + "px";
+        }
+        updateBodyPadding();
+        window.addEventListener("resize", updateBodyPadding);
+
+        const btn = document.querySelector(".menu-toggle");
+        const menu = document.getElementById("navMenu");
+        const overlay = document.getElementById("menuOverlay");
+        if (!btn || !menu || !overlay) return;
+        function openMenu() {
+          menu.classList.add("open");
+          overlay.classList.add("show");
+          overlay.hidden = false;
+          menu.setAttribute("aria-hidden", "false");
+          btn.setAttribute("aria-expanded", "true");
+        }
+        function closeMenu() {
+          menu.classList.remove("open");
+          overlay.classList.remove("show");
+          overlay.hidden = true;
+          menu.setAttribute("aria-hidden", "true");
+          btn.setAttribute("aria-expanded", "false");
+        }
+        btn.addEventListener("click", function () {
+          if (menu.classList.contains("open")) closeMenu();
+          else openMenu();
+        });
+        overlay.addEventListener("click", closeMenu);
+        document
+          .querySelectorAll(".menu a")
+          .forEach((a) => a.addEventListener("click", closeMenu));
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") closeMenu();
+        });
+      })();
+
+      const btn = document.getElementById("dropBtn");
+      const box = document.getElementById("articleBox");
+
+      btn.addEventListener("click", () => {
+        box.classList.toggle("open");
+
+        btn.innerHTML = box.classList.contains("open")
+          ? '<h3>Company Profile of Debt Force Limited  <i class="fa-solid fa-angle-up"></i></h3>'
+          : '<h3>Company Profile of Debt Force Limited  <i class="fa-solid fa-angle-down"></i></h3>';
+      });
+    </script>
+  </body>
+</html>

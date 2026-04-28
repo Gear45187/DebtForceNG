@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/2f00a9640e.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Debt Force</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      .hero {
+        min-height: 70vh;
+        padding-top: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-image:
+          linear-gradient(rgba(0, 0, 0, 0.616)),
+          url("assets/28716f1a-b249-8049-8007-ad92c788c621.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #fff;
+        padding: 40px 12px;
+      }
+      .hero .hero-content {
+        max-width: 780px;
+        padding: 40px;
+      }
+      .hero h1 {
+        font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+        line-height: 1.05;
+        margin-bottom: 12px;
+        font-weight: 800;
+      }
+      .hero p {
+        font-size: 1rem;
+        color: #f1f5f9;
+        max-width: 820px;
+        margin: 0 auto;
+      }
+
+      .info-cards {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 22px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .info-card {
+        background: #fff;
+        color: #111827;
+        width: 200px;
+        height: 200px;
+        padding: 18px;
+        border-radius: 12px;
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .info-card h4 {
+        margin: 0 0 10px 0;
+        font-size: 1rem;
+        font-weight: 800;
+      }
+      .info-card p {
+        margin: 0;
+        font-size: 0.95rem;
+      }
+      @media (max-width: 520px) {
+        .info-card {
+          width: 180px;
+          height: 180px;
+          padding: 14px 16px;
+          margin: 10px auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="brand"><span>DF</span> Debt Force</div>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <nav class="menu" id="navMenu" aria-hidden="true">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="menu-overlay" id="menuOverlay" hidden></div>
+    </header>
+
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <h1>GET IN TOUCH</h1>
+        <p>
+          For enquiries, partnership opportunities, or recovery mandates, please
+          reach out to our team.
+        </p>
+      </div>
+    </section>
+
+    <div class="info-cards">
+      <div class="info-card">
+        <h5>08033349432</h5>
+      </div>
+      <div class="info-card">
+        <h5>
+          Office Address Regency Building Suite 202, Plot 17 Ahmed Onibudo
+          Street Victoria Island, Lagos
+        </h5>
+      </div>
+      <div class="info-card">
+        <h5>
+          <a href="mailto:debtforceng@outlook.com" style="color: #b91c1c"
+            >debtforceng@outlook.com</a
+          >
+        </h5>
+      </div>
+    </div>
+    <br /><br />
+
+    <footer class="footer">
+      <div class="container">
+        <div class="col">
+          <div class="brand-footer">
+            <img
+              src="assets\logos\5b54d9b8-49bd-8008-8007-7373beaa998b.jpg"
+              alt="Debt Force logo"
+              class="dbt-logo"
+            />
+            <div class="title">DEBT FORCE</div>
+          </div>
+        </div>
+
+        <div class="col">
+          <h4>OUR OFFICE</h4>
+          <p style="font-weight: 700">
+            REGENCY BUILDING<br />Suite 202, Plot 17 Ahmed Onibudo Street,<br />Victoria
+            Island, Lagos.
+          </p>
+          <p>
+            <a href="mailto:debtforceng@outlook.com" style="color: #b91c1c"
+              >debtforceng@outlook.com</a
+            >
+          </p>
+          <p>08033349432</p>
+        </div>
+
+        <div class="col">
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      (function () {
+        const nav = document.querySelector(".navbar");
+        function updateBodyPadding() {
+          if (nav) document.body.style.paddingTop = nav.offsetHeight + "px";
+        }
+        updateBodyPadding();
+        window.addEventListener("resize", updateBodyPadding);
+
+        const btn = document.querySelector(".menu-toggle");
+        const menu = document.getElementById("navMenu");
+        const overlay = document.getElementById("menuOverlay");
+        if (!btn || !menu || !overlay) return;
+        function openMenu() {
+          menu.classList.add("open");
+          overlay.classList.add("show");
+          overlay.hidden = false;
+          menu.setAttribute("aria-hidden", "false");
+          btn.setAttribute("aria-expanded", "true");
+        }
+        function closeMenu() {
+          menu.classList.remove("open");
+          overlay.classList.remove("show");
+          overlay.hidden = true;
+          menu.setAttribute("aria-hidden", "true");
+          btn.setAttribute("aria-expanded", "false");
+        }
+        btn.addEventListener("click", function () {
+          if (menu.classList.contains("open")) closeMenu();
+          else openMenu();
+        });
+        overlay.addEventListener("click", closeMenu);
+        document
+          .querySelectorAll(".menu a")
+          .forEach((a) => a.addEventListener("click", closeMenu));
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") closeMenu();
+        });
+      })();
+    </script>
+  </body>
+</html>
